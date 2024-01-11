@@ -31,7 +31,7 @@ async def get_status_transport(transport_id: str):
 #calcularfrete
 @router.get("/calculator/{cep}", status_code=200)
 async def get_transport_calculator(cep: str):
-    return {"Valor de transporte para o CEP informado " : transportservice.calculator(cep)}
+    return transportservice.calculator(cep)
 
 
 #cancelar envio
