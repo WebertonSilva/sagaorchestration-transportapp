@@ -12,8 +12,8 @@ class Database:
     #
     # @app.on_event("startup")
     def startup_db_client(self):
-        mongodb_client = MongoClient("mongodb+srv://admin:admin@transport-db.wzzh9qg.mongodb.net/?retryWrites=true&w=majority")
-        database = mongodb_client["transport_database"]
+        mongodb_client = MongoClient("STRING DE CONEXÃO")
+        database = mongodb_client["CLIENT DB"]
         print("Connected to the MongoDB database!")
         return database
 

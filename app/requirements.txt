@@ -22,8 +22,8 @@ pid==3.0.4
 pip>=23.2.1
 pluggy==1.0.0
 product==0.1.1.1
-pydantic==2.4.2
-pydantic_core==2.6.3
+pydantic
+pydantic_core
 pymongo==4.5.0
 pytest==7.2.1
 python-daemon==3.0.1
