@@ -1,9 +1,14 @@
 import logging
+
+from dotenv import dotenv_values
 from fastapi import FastAPI
 from pymongo import MongoClient
 #from dotenv import dotenv_values
 
 app = FastAPI()
+
+logger = logging.getLogger(__name__)
+config = dotenv_values("db.env")
 
 class Database:
 
@@ -12,8 +17,9 @@ class Database:
     #
     # @app.on_event("startup")
     def startup_db_client(self):
-        mongodb_client = MongoClient("STRING DE CONEXÃO")
-        database = mongodb_client["CLIENT DB"]
+        logger.info("logging from the startup_db_client")
+        client = MongoClient(config["DB_URI"])
+        database = client[config["DB_NAME"]]
         print("Connected to the MongoDB database!")
         return database
 
